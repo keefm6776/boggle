@@ -86,7 +86,10 @@ class TestBoggle(unittest.TestCase):
         twoLetterWord = 'AB'
         threeLetterWord = 'ABC'
         notThereWord = 'EEE'
-        dictionary = [twoLetterWord, threeLetterWord, notThereWord]
+        
+        fullwords = [twoLetterWord, threeLetterWord, notThereWord]
+        stems = ['A', 'AB', 'E', 'EE']
+        dictionary = fullwords, stems
 
         foundWords = boggle.search(grid, dictionary)
 
@@ -101,3 +104,4 @@ class TestBoggle(unittest.TestCase):
         """
         dictionary = boggle.get_dictionary('words.txt')
         self.assertGreater(len(dictionary), 0)
+    
